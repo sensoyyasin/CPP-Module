@@ -25,14 +25,15 @@ int main(int argc, char **argv)
     dosya1.open(argv[1]);
     s1 = argv[2];
     s2 = argv[3];
-    dosya2.open((std::string)argv[1] + ".replace");
 
     if (!dosya1.is_open())
     {
         std::cout << "The file couldn't open " << std::endl;
         exit(1);
     }
-
+    
+    dosya2.open((std::string)argv[1] + ".replace");
+    
     while (std::getline(dosya1, temp))
     {
         found = temp.find(s1);
@@ -47,15 +48,7 @@ int main(int argc, char **argv)
         }
         dosya2 << temp << std::endl;
     }
-    // Without "\n"
-    // else
-    // {
-    //     while (dosya1 >> maintemp)
-    //     {
-    //         if (maintemp == argv[2])
-    //             maintemp = argv[3];
-    //         dosya2 << maintemp << " ";
-    //     }
+    
     std::cout << "\033[1;92mThe file has been opened properly\033[0m" << std::endl;
     dosya1.close();
     dosya2.close();
