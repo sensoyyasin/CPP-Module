@@ -6,7 +6,7 @@
 class Fixed
 {
     private:
-        float depo;
+        int depo;
         static const int integer = 8;
 
     public:

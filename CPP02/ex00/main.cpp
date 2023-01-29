@@ -3,7 +3,7 @@
 int main( void )
 {
   Fixed a;
-  Fixed b( a );
+  Fixed b( a ); //Copy constructor -> olusurken degerini baska nesneden alıyor.
   Fixed c;
   
   c = b;

@@ -1,9 +1,10 @@
 #include "Fixed.hpp"
 
+//Operator overloading
 Fixed &Fixed::operator=(const Fixed &src)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &src)
+    if (&src != this)
         this->depola = src.getRawBits();
     return(*this);
 }

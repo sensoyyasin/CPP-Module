@@ -14,15 +14,17 @@ Fixed::~Fixed()
 Fixed::Fixed(const int i)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->depo = i;
+    //std::cout << "int before: " << i << std::endl;
+    this->depo = (i << this->integer);
+    //std::cout << "int after: " << this->depo << std::endl;
 }
 
 Fixed::Fixed(const float j)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->depo = j * 1.000001;
-    //this->depo = (j + (j * 1.000001));
-    this->depo = j;
+    //std::cout << "float before: " << j << std::endl;
+    this->depo = roundf(j * (1 << integer));
+    //std::cout << "float after: " << this->depo << std::endl;
 }
 
 Fixed::Fixed(const Fixed& copy)
@@ -51,13 +53,13 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt(void) const
 {
-    return(roundf(this->depo));
-    //return(round(this->depo >> Fixed::integer));
+    return(this->depo >> integer);
 }
 
 float Fixed::toFloat(void) const
 {
-    return(this->depo);
+    //std::cout << "Son islem :"<< (float)this->depo / (1 << this->integer) << std::endl;
+    return((float)this->depo / (1 << this->integer));
 }
 
 std::ostream& operator<<(std::ostream &o, const Fixed &f)
