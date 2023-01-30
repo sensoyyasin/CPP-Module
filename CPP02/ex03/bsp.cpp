@@ -37,13 +37,8 @@ float   in_linee(Point const n, Point const p)
     return (abs((p_y - n_y) / (p_x - n_x)));
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const p)
+float   is_vertex(Point const a, Point const b, Point const c, Point const p)
 {
-    double A = area(a,b,c);
-    double A1 = area(p,b,c);
-    double A2 = area(a,p,c);
-    double A3 = area(a,b,p);
-
     float p_x = f_x(p);
     float p_y = f_y(p);
 
@@ -56,9 +51,24 @@ bool bsp( Point const a, Point const b, Point const c, Point const p)
     float c_x = f_x(c);
     float c_y = f_y(c);
 
+    if ((p_x != a_x || p_y != a_y) && (p_x != b_x || p_y != b_y) && (p_x != c_x || p_y != c_y))
+        return (1);
+    else
+        return (0);
+}
+
+bool bsp( Point const a, Point const b, Point const c, Point const p)
+{
+    double A = area(a,b,c);
+    double A1 = area(p,b,c);
+    double A2 = area(a,p,c);
+    double A3 = area(a,b,p);
+
+    //For vertex
+
     if ((in_linee(a, p) == in_linee(b, p)) || (in_linee(a,p) == in_linee(c, p))  || (in_linee(b, p) == in_linee(c, p)))
         return (false);
-    if (A == (A1+ A2+ A3) && (p_x != a_x || p_y != a_y) && (p_x != b_x || p_y != b_y) && (p_x != c_x || p_y != c_y))
+    if (A == (A1+ A2+ A3) && is_vertex(a,b,c,p))
         return(true);
     else
         return(false);

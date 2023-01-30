@@ -2,11 +2,11 @@
 
 int main()
 {
-    Point const a(0,10);
+    Point const a(0,0);
     Point const b(10,0);
-    Point const c(0,0);
+    Point const c(0,10);
 
-    Point const p(2,8);
+    Point const p(2,2);
 
     //the purpose of this algorithm is if a point is inside a triangle the areas are equal
     //Returns: True if the point is inside the triangle. False otherwise. Thus, if the point is a vertex or on edge, it will return False.
