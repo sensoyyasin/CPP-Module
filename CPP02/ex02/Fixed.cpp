@@ -2,6 +2,7 @@
 
 Fixed::Fixed()
 {
+	this->depo = 0;
 }
 
 Fixed::~Fixed(){}
@@ -16,17 +17,56 @@ Fixed::Fixed(const float j)
     this->depo = roundf(j * (1 << integer));
 }
 
-Fixed::Fixed(const Fixed& src)
+Fixed::Fixed(const Fixed &src)
 {
 	//Bir constructor veya destructor deger donduremez.
-	*this = src;
+	this->depo = src.getRawBits();
 }
 
 Fixed  &Fixed::operator=(const Fixed &src)
 {
-	if (this != &src)
-		this->depo = src.getRawBits();
+	this->depo = src.getRawBits();
 	return(*this);
+}
+
+bool Fixed::operator<(const Fixed &src)
+{
+	return(this->toFloat() < src.toFloat());
+}
+
+bool Fixed::operator<=(const Fixed &src)
+{
+	return(this->toFloat() <= src.toFloat());
+}
+
+bool Fixed::operator>(const Fixed &src)
+{
+	return(this->toFloat() > src.toFloat());
+}
+
+bool Fixed::operator>=(const Fixed &src)
+{
+	return(this->toFloat() >= src.toFloat());
+}
+
+bool Fixed::operator==(const Fixed &src)
+{
+	return(this->toFloat() == src.toFloat());
+}
+
+bool Fixed::operator!=(const Fixed &src)
+{
+	return(this->toFloat() != src.toFloat());
+}
+
+Fixed Fixed::operator*(const Fixed &src)
+{
+	return (this->toFloat() * src.toFloat());
+}
+
+Fixed Fixed::operator/(const Fixed &src)
+{
+	return (this->toFloat() / src.toFloat());
 }
 
 //a++;
@@ -59,6 +99,22 @@ Fixed  &Fixed::operator--()
 {
 	this->depo--;
 	return(*this);
+}
+
+Fixed Fixed::max(Fixed src1, Fixed src2)
+{
+	if (src1 > src2)
+		return(src1);
+	else
+		return(src2);
+}
+
+Fixed Fixed::min(Fixed src1, Fixed src2)
+{
+	if (src1 < src2)
+		return(src1);
+	else
+		return(src2);
 }
 
 float Fixed::getRawBits() const

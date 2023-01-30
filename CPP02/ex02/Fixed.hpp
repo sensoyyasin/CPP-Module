@@ -2,6 +2,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -30,14 +31,19 @@ class Fixed
 		Fixed  &operator--();
 		//a--;
 		Fixed  operator--(int);
-		//Fixed  &operator/();
 
-		//bool Fixed	&operator>(const Fixed &src);
-		//bool Fixed	&operator<(const Fixed &src);
-		//bool Fixed	&operator>=(const Fixed &src);
-		//bool Fixed	&operator<=(const Fixed &src);
-		//bool Fixed	&operator==(const Fixed &src);
-		//bool Fixed	&operator!=(const Fixed &src);
+        Fixed operator*(Fixed const &src);
+        Fixed operator/(Fixed const &src);
+
+		bool operator<(Fixed const &src);
+		bool operator>(Fixed const &src);
+		bool operator<=(Fixed const &src);
+		bool operator>=(Fixed const &src);
+		bool operator==(Fixed const &src);
+		bool operator!=(Fixed const &src);
+
+        static Fixed max(Fixed src1, Fixed src2);
+        static Fixed min(Fixed src1, Fixed src2);
 
         float toFloat(void) const;
         int toInt(void) const;
@@ -47,9 +53,6 @@ class Fixed
 
         //Setter
         void setRawBits(int const raw);
-
-		//max
-
 };
 
 std::ostream& operator<<(std::ostream &o, const Fixed &src);
