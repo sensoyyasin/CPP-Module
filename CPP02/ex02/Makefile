@@ -6,11 +6,11 @@
 #    By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/01/30 14:03:18 by ysensoy          ###   ########.fr        #
+#    Updated: 2023/01/30 14:57:13 by ysensoy          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Point
+NAME = Fixed
 CC = c++
 CLAFGS = -Wall -Wextra -Werror
 SRCS = $(wildcard *.cpp)
@@ -18,6 +18,7 @@ OBJ = $(SRCS:.cpp = .o)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CLAFGS) $(SRCS) -o $(NAME)
+	@echo "\033[1;92mCompiled succesfully..\033[0m"
 
 all: $(NAME)
 
