@@ -9,7 +9,7 @@ int main()
     Point const p(2,8);
 
     //the purpose of this algorithm is if a point is inside a triangle the areas are equal
-    //if the point is outside the triangle, its area is greater than the area of ​​the triangle
+    //Returns: True if the point is inside the triangle. False otherwise. Thus, if the point is a vertex or on edge, it will return False.
     bool is = bsp(a, b, c, p);
 
     if (is == true)
