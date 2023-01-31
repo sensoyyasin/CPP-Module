@@ -4,8 +4,7 @@
 Fixed &Fixed::operator=(const Fixed &src)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    if (&src != this)
-        this->depola = src.getRawBits();
+    this->depola = src.getRawBits();
     return(*this);
 }
 

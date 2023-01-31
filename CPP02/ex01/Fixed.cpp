@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <math.h>
 
 Fixed::Fixed()
 {
@@ -36,8 +35,7 @@ Fixed::Fixed(const Fixed& copy)
 Fixed	&Fixed::operator=(const Fixed &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &src)
-		this->depo = src.getRawBits();
+	this->depo = src.getRawBits();
 	return (*this);
 }
 

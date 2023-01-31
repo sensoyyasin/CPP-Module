@@ -73,7 +73,7 @@ Fixed Fixed::operator/(const Fixed &src)
 Fixed Fixed::operator++(int)
 {
 	Fixed a;
-	a = this->toInt();
+	a = this->toFloat();
 	this->depo++;
 	return (a);
 }
@@ -82,7 +82,7 @@ Fixed Fixed::operator++(int)
 Fixed Fixed::operator--(int)
 {
 	Fixed a;
-	a = this->toInt();
+	a = this->toFloat();
 	this->depo--;
 	return (a);
 }
