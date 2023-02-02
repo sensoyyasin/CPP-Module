@@ -6,8 +6,6 @@ DiamondTrap::DiamondTrap()
     FragTrap::setHitPoints(100);
     ScavTrap::setEnergyPoint(50);
     FragTrap::setAttackDamage(30);
-    std::string  a = "Yasin";
-    ScavTrap::setName(a + "_clap_name");
 }
 
 DiamondTrap::DiamondTrap(std::string name)

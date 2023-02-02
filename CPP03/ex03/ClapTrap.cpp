@@ -52,9 +52,9 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
 }
 
-void ClapTrap::setName(const std::string &name)
+void ClapTrap::setName(const std::string &Name)
 {
-    this->name = name;
+    this->name = Name;
 }
 
 std::string ClapTrap::getName()

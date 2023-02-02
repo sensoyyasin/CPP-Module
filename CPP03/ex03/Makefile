@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+         #
+#    By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/02/02 13:00:41 by ysensoy          ###   ########.fr        #
+#    Updated: 2023/02/02 22:22:09 by yasinsensoy      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = DiamondTrap
 CC = c++
-CLAFGS = -Wall -Wextra -Werror
+CLAFGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 SRCS = $(wildcard *.cpp)
 OBJ = $(SRCS:.cpp = .o)
 
