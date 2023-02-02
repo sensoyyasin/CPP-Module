@@ -3,13 +3,14 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap
+class FragTrap : virtual public ClapTrap
 {
 public:
     FragTrap();
     FragTrap(std::string name);
     ~FragTrap();
 
+    //extra
     void highFivesGuys(void);
 };
 

@@ -28,5 +28,7 @@ int main()
         <<"2 - Energy Point: " << scavTrap.getEnergyPoint() << std::endl
         <<"3 - Attack Point: " << scavTrap.getAttackDamage() << std::endl;
     }
+    scavTrap.guardGate();
+    
     return (0);
 }

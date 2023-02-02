@@ -30,5 +30,6 @@ int main()
         <<"2 - Energy Point: " << fragTrap.getEnergyPoint() << std::endl
         <<"3 - Attack Point: " << fragTrap.getAttackDamage() << std::endl;
     }
+    fragTrap.highFivesGuys();
     return (0);
 }

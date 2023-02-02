@@ -23,8 +23,3 @@ FragTrap::~FragTrap()
 {
     std::cout << "FragTrap Destructor" << std::endl;
 }
-
-void FragTrap::highFivesGuys()
-{
-    std::cout << this->getName() << " High Five Guys called " << std::endl;
-}
