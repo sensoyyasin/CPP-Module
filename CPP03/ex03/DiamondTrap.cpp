@@ -24,5 +24,5 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << ScavTrap::getName() << " ClapTrap name" << std::endl;
+    std::cout << getName() << " ClapTrap name" << std::endl;
 }
