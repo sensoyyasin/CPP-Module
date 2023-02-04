@@ -5,10 +5,10 @@ ClapTrap::ClapTrap(){}
 ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "ClapTrap Constructor" << std::endl;
-    this->hitPoints = 10;
-    this->energyPoints = 10;
-    this->attackDamage = 0;
-    this->name = name;
+    this->setHitPoints(10);
+    this->setEnergyPoint(10);
+    this->setAttackDamage(0);
+    this->setName(name);
 }
 
 ClapTrap::~ClapTrap()
@@ -87,4 +87,23 @@ void ClapTrap::setEnergyPoint(int energyPoint)
 int ClapTrap::getEnergyPoint()
 {
     return (this->energyPoints);
+}
+
+ClapTrap        &ClapTrap::operator=(ClapTrap const &src)
+{
+    std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+	if (this != &src)
+	{
+        this->name = src.name;
+        this->hitPoints = src.hitPoints;
+        this->attackDamage = src.attackDamage;
+    }
+	return (*this);
+}
+
+std::ostream	&operator<<(std::ostream &stream, ClapTrap &clapTrap)
+{
+	stream << " Name: " << clapTrap.getName() << std::endl << " Hitpoints: " << clapTrap.getHitPoints() << std::endl << \
+	" Energy Points: " << clapTrap.getEnergyPoint() << std::endl << " Attack Damage: " << clapTrap.getAttackDamage() << std::endl;
+	return (stream);
 }

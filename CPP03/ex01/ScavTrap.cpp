@@ -6,8 +6,6 @@ ScavTrap::ScavTrap()
     this->setHitPoints(100);
     this->setEnergyPoint(50);
     this->setAttackDamage(20);
-    std::string  a = "Yasin";
-    this->setName(a);
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -27,4 +25,14 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate()
 {
     std::cout << this->getName() << " is now in Gate keeper mode." << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+    if ((this->getHitPoints() != 0 || this->getEnergyPoint() != 0) && (this->getHitPoints() > 0 && this->getEnergyPoint() > 0))
+    {
+        std::cout << "ScavTrap " << this->getName() << " attacks " << target
+        << " causing " << this->getAttackDamage() << " points of damage! " << std::endl;
+        setEnergyPoint(getEnergyPoint() - 1);
+    }
 }

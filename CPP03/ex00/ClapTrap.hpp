@@ -13,8 +13,10 @@ private:
 public:
     ClapTrap();
     ClapTrap(std::string name);
+    ClapTrap(const ClapTrap &src);
     ~ClapTrap();
 
+    ClapTrap &operator=(const ClapTrap &src);
     //GETTER AND SETTER FOR print the private variables
     std::string getName();
     void setName(std::string &Name);
@@ -34,5 +36,7 @@ public:
     void beRepaired(unsigned int amount);
     
 };
+
+std::ostream	&operator<<(std::ostream &stream, ClapTrap &clapTrap);
 
 #endif
