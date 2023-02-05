@@ -12,13 +12,7 @@ Brain::~Brain()
 
 Brain &Brain::operator=(const Brain &src)
 {
-    std::string *ideas = src.getIdeas();
-    int i = 0;
-    while (i < 100)
-    {
-        this->ideas[i] = ideas[i];
-        i++;
-    }
+    (void) src;
     return (*this);
 }
 

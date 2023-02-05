@@ -6,13 +6,13 @@
 #    By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/02/03 12:52:59 by yasinsensoy      ###   ########.fr        #
+#    Updated: 2023/02/05 09:59:02 by yasinsensoy      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animal
 CC = c++
-CLAFGS = -Wall -Wextra -Werror
+CLAFGS = -Wall -Wextra -Werror -std=c++98
 SRCS = $(wildcard *.cpp)
 OBJ = $(SRCS:.cpp = .o)
 

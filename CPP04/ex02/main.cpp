@@ -6,6 +6,7 @@ int main()
 {
     Animal *dog = new Dog();
     Animal *cat = new Cat();
+    //Animal *animal = new Animal();
     //I can't create direct object from abstract class
     //Because abstract classes contain undefined functions 
     //and these functions must be implemented in derived classes.
