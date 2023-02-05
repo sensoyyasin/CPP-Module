@@ -8,7 +8,7 @@ FragTrap::FragTrap()
     this->setAttackDamage(30);
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "FragTrap Constructor" << std::endl;
     this->setHitPoints(100);
@@ -35,4 +35,6 @@ void FragTrap::attack(const std::string& target)
         << " causing " << this->getAttackDamage() << " points of damage! " << std::endl;
         setEnergyPoint(getEnergyPoint() - 1);
     }
+    else
+        std::cout << "FragTrap " << this->getName() << "doesn't have hitPoints or Energy" << std::endl;
 }

@@ -6,11 +6,9 @@ FragTrap::FragTrap()
     this->setHitPoints(100);
     this->setEnergyPoint(100);
     this->setAttackDamage(30);
-    std::string  a = "Yasin";
-    this->setName(a);
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "FragTrap Constructor" << std::endl;
     this->setHitPoints(100);

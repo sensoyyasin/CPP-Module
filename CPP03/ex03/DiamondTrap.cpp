@@ -8,7 +8,7 @@ DiamondTrap::DiamondTrap()
     FragTrap::setAttackDamage(30);
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
     std::cout << "\033[1;92mDiamondTrap Constructor\033[0m" << std::endl;
     FragTrap::setHitPoints(100);
