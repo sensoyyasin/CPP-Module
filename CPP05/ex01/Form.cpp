@@ -14,13 +14,13 @@ Form::~Form()
 Form::Form(std::string name, int signPoint, int execPoint)
 {
     this->indicating = false;
+    this->name = name;
+    this->signGrade = signPoint;
+    this->executeGrade = execPoint;
     if (this->signGrade < 1 || this->executeGrade < 1)
         throw Form::GradeTooHighException();
     if (this->signGrade > 150 || this->executeGrade > 150)
         throw Form::GradeTooLowException();
-    this->name = name;
-    this->signGrade = signPoint;
-    this->executeGrade = execPoint;
 }
 
 void    Form::haveYouSign(Bureaucrat &bureaucrat)
@@ -85,6 +85,6 @@ std::ostream &operator<<(std::ostream &o, const Form &src)
 {
     if (src.getIndicate() == true)
         o << src.getName() << ", form signed " << std::endl;
-    o << src.getName() << ", form didn't sign " << std::endl;
+    o << src.getName() << ", form didn't sign ";
     return (o);
 }
