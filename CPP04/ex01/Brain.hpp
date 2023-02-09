@@ -11,7 +11,6 @@ public:
     ~Brain();
 
     std::string *getIdeas() const;
-    Brain   &operator=(const Brain &src);
 		
 };
 

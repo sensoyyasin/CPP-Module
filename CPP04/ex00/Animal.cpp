@@ -21,7 +21,20 @@ std::string Animal::getType() const
     return (this->type);
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout << "The animal makes a sound" << std::endl;
+}
+
+Animal::Animal(const Animal &copy)
+{
+    *this = copy;
+    std::cout << "Copy[Animal] Constructor called" << std::endl;
+}
+
+Animal& Animal::operator=(const Animal &copy)
+{
+    this->type = copy.type;
+	std::cout << "Copy[Animal] Assignment operator" << std::endl;
+	return *this;
 }

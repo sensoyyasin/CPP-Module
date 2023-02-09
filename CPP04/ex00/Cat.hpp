@@ -8,7 +8,10 @@ class Cat : public Animal
 public:
     Cat();
     ~Cat();
-    void makeSound();
+    void makeSound() const;
+
+    Cat(const Cat &copy);
+	Cat& operator=(const Cat& src);
 };
 
 #endif

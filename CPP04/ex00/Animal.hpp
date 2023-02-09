@@ -17,7 +17,10 @@ public:
     //get
     std::string getType() const;
 
-    virtual void makeSound();
+    Animal(const Animal &copy);
+	Animal& operator=(const Animal& src);
+
+    virtual void makeSound() const;
 };
 
 #endif

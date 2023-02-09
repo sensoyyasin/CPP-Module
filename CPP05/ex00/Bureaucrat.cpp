@@ -9,21 +9,23 @@ Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int gradeRange)
 {
+    this->name = name;
+    this->gradeRange = gradeRange;
     if (gradeRange < 1)
         throw Bureaucrat::GradeTooHighException();
     if (gradeRange > 150)
         throw Bureaucrat::GradeTooLowException();
-    this->name = name;
-    this->gradeRange = gradeRange;
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
 {
+    //this class mustn't throw because the function have _NOEXCEPT like throw();
     return ("Too Low Exception");
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
 {
+    //this class mustn't throw because the function have _NOEXCEPT like throw();
     return ("Too High Exception");
 }
 

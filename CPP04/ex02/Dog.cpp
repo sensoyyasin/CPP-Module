@@ -15,3 +15,16 @@ void Dog::makeSound()
 {
     std::cout << "The dog barks." << std::endl;
 }
+
+Dog::Dog(const Dog &copy) : Animal()
+{
+    *this = copy;
+    std::cout << "Copy[Dog] Constructor called" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog &copy)
+{
+    this->type = copy.type;
+	std::cout << "Copy[Dog] Assignment operator" << std::endl;
+	return *this;
+}

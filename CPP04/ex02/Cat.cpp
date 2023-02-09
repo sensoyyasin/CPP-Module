@@ -15,3 +15,16 @@ void Cat::makeSound()
 {
     std::cout << "Miyav miyav." << std::endl;
 }
+
+Cat::Cat(const Cat &copy) : Animal()
+{
+    *this = copy;
+    std::cout << "Copy[Cat] Constructor called" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat &copy)
+{
+    this->type = copy.type;
+	std::cout << "Copy[Cat] Assignment operator" << std::endl;
+	return *this;
+}

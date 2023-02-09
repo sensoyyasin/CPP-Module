@@ -11,6 +11,10 @@ private:
 public:
     Cat();
     ~Cat();
+
+    Cat(const Cat &copy);
+	Cat& operator=(const Cat& src);
+
     void makeSound();
 };
 

@@ -16,7 +16,7 @@ int main()
     //Test Case2:
     try
     {
-        Bureaucrat bureaucrat("Emanuel", 150);
+        Bureaucrat bureaucrat("Emanuel", 2);
         std::cout << bureaucrat << std::endl;
     }
     catch(std::exception &e){

@@ -9,7 +9,10 @@ public:
     Dog();
     ~Dog();
 
-    void makeSound();
+    void makeSound() const;
+
+    Dog(const Dog &copy);
+	Dog& operator=(const Dog& src);
 };
 
 #endif

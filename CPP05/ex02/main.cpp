@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentPardonForm.hpp"
 
 int main()
 {
@@ -17,12 +19,15 @@ int main()
     //Test Case2:
     try
     {
-        Bureaucrat bureaucrat("Emanuel", 79);
-        Form form("Bureaucrat Form", 80, 100);
-        form.haveYouSign(bureaucrat);
+        Bureaucrat bureaucrat("Emanuel", 1);
+        Shrubberyform s_form("Shrubbery Form", 145, 137);
+        RobotomyRequestForm rr_form("RobotomyRequest Form", 72, 45);
+        PresidentialPardonForm pp_form("PresidentPardon Form", 25, 5);
+
+        pp_form.haveYouSign(bureaucrat);
 
         std::cout << bureaucrat;
-        std::cout << form << std::endl;
+        std::cout << pp_form << std::endl;
     }
     catch(std::exception &e){
         std::cerr << e.what() << std::endl;

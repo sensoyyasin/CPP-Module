@@ -1,6 +1,4 @@
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
@@ -19,12 +17,16 @@ int main()
         i++;
     }
 
-    i = 0;
-    while (i < 100)
-    {
-        delete animals[i];
-        i++;
-    }
+    // Dog *dog = new Dog();
+    // Dog *dog2 = new Dog();
+
+    // int i = 0;
+    // while (1)
+    // {
+    //     *dog = *dog2;
+    //     i++;
+    // }
+
     //system("leaks Animal");
     return (0);
 }

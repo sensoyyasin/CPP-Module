@@ -15,7 +15,9 @@ public:
     //get
     std::string getType() const;
 
-    virtual void makeSound();
+	WrongAnimal& operator=(const WrongAnimal& src);
+
+    virtual void makeSound() const;
 };
 
 #endif

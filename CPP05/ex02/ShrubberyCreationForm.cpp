@@ -1,29 +1,29 @@
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-Form::Form()
+Shrubberyform::Shrubberyform()
 {
     this->indicating = false;
-    std::cout << "Form Constructor called" << std::endl;
+    std::cout << "Shrubberyform Constructor called" << std::endl;
 }
 
-Form::~Form()
+Shrubberyform::~Shrubberyform()
 {
     this->indicating = false;
 }
 
-Form::Form(std::string name, int signPoint, int execPoint)
+Shrubberyform::Shrubberyform(std::string name, int signPoint, int execPoint)
 {
     this->indicating = false;
     this->name = name;
     this->signGrade = signPoint;
     this->executeGrade = execPoint;
     if (this->signGrade < 1 || this->executeGrade < 1)
-        throw Form::GradeTooHighException();
+        throw Shrubberyform::GradeTooHighException();
     if (this->signGrade > 150 || this->executeGrade > 150)
-        throw Form::GradeTooLowException();
+        throw Shrubberyform::GradeTooLowException();
 }
 
-void    Form::haveYouSign(Bureaucrat &bureaucrat)
+void    Shrubberyform::haveYouSign(Bureaucrat &bureaucrat)
 {
     if ((bureaucrat.getgradeRange() < this->getsignGrade()) && (bureaucrat.getgradeRange() < this->getsignGrade()))
         this->indicating = true;
@@ -31,59 +31,59 @@ void    Form::haveYouSign(Bureaucrat &bureaucrat)
         this->indicating = false;
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *Shrubberyform::GradeTooLowException::what() const throw()
 {
     return ("Too Low Exception");
 }
 
-const char *Form::GradeTooHighException::what() const throw()
+const char *Shrubberyform::GradeTooHighException::what() const throw()
 {
     return ("Too High Exception");
 }
 
-void Form::setIndicate(bool indicator)
+void Shrubberyform::setIndicate(bool indicator)
 {
     this->indicating = indicator;
 }
 
-bool Form::getIndicate() const
+bool Shrubberyform::getIndicate() const
 {
     return (this->indicating);
 }
 
-void Form::setName(std::string name)
+void Shrubberyform::setName(std::string name)
 {
     this->name = name;
 }
 
-std::string Form::getName() const
+std::string Shrubberyform::getName() const
 {
     return (this->name);
 }
 
-void Form::setsignGrade(int signgrade)
+void Shrubberyform::setsignGrade(int signgrade)
 {
     this->signGrade = signgrade;
 }
 
-int Form::getsignGrade() const
+int Shrubberyform::getsignGrade() const
 {
     return (this->signGrade);
 }
 
-void Form::setexecuteGrade(int execgrade)
+void Shrubberyform::setexecuteGrade(int execgrade)
 {
     this->executeGrade = execgrade;
 }
 
-int Form::getexecuteGrade() const
+int Shrubberyform::getexecuteGrade() const
 {
     return (this->executeGrade);
 }
 
-std::ostream &operator<<(std::ostream &o, const Form &src)
+std::ostream &operator<<(std::ostream &o, const Shrubberyform &src)
 {
-    if (src.getIndicate() == true)
+    if (src.getIndicate() == true && src.getsignGrade() == 145 && src.getexecuteGrade() == 137)
         o << " signed " << src.getName();
     else
         o << ", couldn't sign " << src.getName() << " because " << src.getsignGrade() << " and " << src.getexecuteGrade() << " was lower than bureaucrat Grade";
