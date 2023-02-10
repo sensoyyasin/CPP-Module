@@ -3,7 +3,6 @@
 Form::Form()
 {
     this->indicating = false;
-    std::cout << "Form Constructor called" << std::endl;
 }
 
 Form::~Form()

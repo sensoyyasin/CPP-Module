@@ -1,9 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
-{
-    std::cout << "RobotomyRequestForm Constructor called" << std::endl;
-}
+RobotomyRequestForm::RobotomyRequestForm(){}
 
 RobotomyRequestForm::~RobotomyRequestForm() {
 }
@@ -29,7 +26,7 @@ void RobotomyRequestForm::executeForm() const
 {
     int i = 0;
     //what do you want this is just an example
-    while (i <= 2)
+    while (i <= 2 && this->getsignGrade() != 0)
     {
         if (i % 2 == 0 && this->getsignGrade() == 72 && this->getexecuteGrade() == 45)
         {

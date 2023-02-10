@@ -1,9 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
-{
-    std::cout << "PresidentialPardonForm Constructor called" << std::endl;
-}
+PresidentialPardonForm::PresidentialPardonForm(){}
 
 PresidentialPardonForm::~PresidentialPardonForm() {
 }

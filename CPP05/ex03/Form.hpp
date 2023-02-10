@@ -16,7 +16,7 @@ private:
     int executeGrade;
 public:
     Form();
-    ~Form();
+    virtual ~Form();
     Form(const std::string name, int signPoint, int execPoint);
 
     void setName(std::string name);

@@ -1,10 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-{
-    std::cout << "ShrubberyCreationForm Constructor called" << std::endl;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(){}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }

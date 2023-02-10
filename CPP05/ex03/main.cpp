@@ -3,18 +3,17 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-    //Test Case2:
     try
     {
-        Bureaucrat bureaucrat("Emanuel", 1);
-        ShrubberyCreationForm scForm("ShrubberyCreationForm");
-        //PresidentialPardonForm ppForm("PresidentialPardonForm");
+        Intern someRandomIntern;
+        Form *rrf;
 
-        bureaucrat.signForm(scForm);
-        bureaucrat.executeForm(scForm);
+        rrf = someRandomIntern.makeForm("shrubberycreation", "Bender");
+        rrf->executeForm();
         
     }
     catch(std::exception &e){
