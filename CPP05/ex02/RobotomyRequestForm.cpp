@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <time.h>
 
 RobotomyRequestForm::RobotomyRequestForm()
 {
@@ -27,17 +28,18 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm src)
 
 void RobotomyRequestForm::executeForm() const
 {
-    int i = 0;
-    //what do you want this is just an example
-    while (i <= 2)
+    std::srand(std::time(0));
+    int random_variable = std::rand() % 2;
+
+    int i = 1;
+    while (i--)
     {
-        if (i % 2 == 0 && this->getsignGrade() == 72 && this->getexecuteGrade() == 45)
+        if (this->getsignGrade() == 72 && this->getexecuteGrade() == 45 && random_variable == 0)
         {
             std::cout << "Whirr Whirr." << std::endl;
             std::cout << this->getName() << "has been robotomized successfully 50% of the time" << std::endl;
         }
         else
             std::cout << this->getName() << " robotomy failed." << std::endl;
-        i++;
     }
 }

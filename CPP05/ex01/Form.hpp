@@ -28,7 +28,7 @@ public:
     void setIndicate(bool indicator);
     bool getIndicate() const;
 
-    void haveYouSign(Bureaucrat &bureaucrat);
+    void beSigned(Bureaucrat &bureaucrat);
 
     class GradeTooLowException : public std::exception
     {

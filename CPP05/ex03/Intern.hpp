@@ -8,9 +8,8 @@
 
 class Intern
 {
-private:
-    Form *forms[3];
 public:
+    Form *forms[3];
     Intern();
     ~Intern();
 

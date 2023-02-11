@@ -1,6 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(){}
+PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5)
+{}
 
 PresidentialPardonForm::~PresidentialPardonForm() {
 }

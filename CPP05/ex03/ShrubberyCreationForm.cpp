@@ -1,7 +1,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(){}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137)
+{}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }

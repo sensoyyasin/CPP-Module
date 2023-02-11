@@ -82,10 +82,7 @@ int Form::getexecuteGrade() const
 
 std::ostream &operator<<(std::ostream &o, const Form &src)
 {
-    if (src.getIndicate() == true)
-        o << " signed " << src.getName();
-    else
-        o << ", couldn't sign " << src.getName() << " because " << src.getsignGrade() << " and " << src.getexecuteGrade() << " was lower than bureaucrat Grade";
+    (void)src;
     return (o);
 }
 

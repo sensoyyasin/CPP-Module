@@ -9,9 +9,10 @@ int main()
     //Test Case2:
     try
     {
-        Bureaucrat bureaucrat("Emanuel", 1);
+        Bureaucrat bureaucrat("bureaucrat", 44);
         ShrubberyCreationForm scForm("ShrubberyCreationForm");
         //PresidentialPardonForm ppForm("PresidentialPardonForm");
+        //RobotomyRequestForm rrf("RobotomyRequestForm");
 
         bureaucrat.signForm(scForm);
         bureaucrat.executeForm(scForm);

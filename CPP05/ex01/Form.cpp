@@ -23,9 +23,9 @@ Form::Form(std::string name, int signPoint, int execPoint)
         throw Form::GradeTooLowException();
 }
 
-void    Form::haveYouSign(Bureaucrat &bureaucrat)
+void    Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if ((bureaucrat.getgradeRange() < this->getsignGrade()) && (bureaucrat.getgradeRange() < this->getsignGrade()))
+    if (bureaucrat.getgradeRange() < this->getsignGrade())
         this->indicating = true;
     else
         this->indicating = false;
@@ -86,6 +86,6 @@ std::ostream &operator<<(std::ostream &o, const Form &src)
     if (src.getIndicate() == true)
         o << " signed " << src.getName();
     else
-        o << ", couldn't sign " << src.getName() << " because " << src.getsignGrade() << " and " << src.getexecuteGrade() << " was lower than bureaucrat Grade";
+        o << " couldn't sign " << src.getName() << " because " << src.getsignGrade() << " was higher than bureaucrat Grade";
     return (o);
 }

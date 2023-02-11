@@ -17,9 +17,10 @@ int main()
     //Test Case2:
     try
     {
-        Bureaucrat bureaucrat("Emanuel", 110);
-        Form form("Bureaucrat Form", 80, 100);
-        form.haveYouSign(bureaucrat);
+        Bureaucrat bureaucrat("bureaucrat", 88);
+        Form form("Form", 100, 80);
+
+        form.beSigned(bureaucrat);
 
         std::cout << bureaucrat;
         std::cout << form << std::endl;

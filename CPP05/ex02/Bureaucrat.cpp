@@ -64,7 +64,8 @@ void Bureaucrat::signForm(Form &form)
     try
     {
         form.haveYouSign(*this);
-        std::cout << this->getName() << " signed " << form.getName() << std::endl; 
+        if (this->gradeRange < form.getsignGrade())
+            std::cout << this->getName() << " signed " << form.getName() << std::endl; 
     }
     catch(std::exception& e)
     {

@@ -1,6 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(){}
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45)
+{}
 
 RobotomyRequestForm::~RobotomyRequestForm() {
 }
@@ -25,6 +26,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm src)
 void RobotomyRequestForm::executeForm() const
 {
     int i = 0;
+    std::cout << this->getsignGrade() << std::endl;
     //what do you want this is just an example
     while (i <= 2 && this->getsignGrade() != 0)
     {
