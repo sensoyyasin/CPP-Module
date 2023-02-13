@@ -8,6 +8,10 @@ struct Data
 
 static uintptr_t serialize(Data *ptr)
 {
+    //ptr -> donusturulecek veri
+    //uintptr_t -> donusturulecek verinin yeni turu
+    //reinterpret_cast genellikle güvenli olmayan veya bellekteki verilerin doğrudan yorumlanması gereken durumlarda kullanılır. 
+    //Bunun yerine static_cast, dynamic_cast, const_cast gibi daha güvenli dönüştürme yöntemleri kullanılması önerilir.
     return (reinterpret_cast<uintptr_t>(ptr));
 }
 
