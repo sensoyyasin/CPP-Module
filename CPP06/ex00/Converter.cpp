@@ -1,6 +1,6 @@
 #include "Converter.hpp"
 
-Converter::Converter(){}
+Converter::Converter() {}
 
 Converter::~Converter() {}
 
@@ -26,18 +26,18 @@ void Converter::convertDouble(double i)
 
 void Converter::pseudoPrinter(std::string str)
 {
-    std::cout << "char: " << "impossible" << std::endl;
-    std::cout << "int: " << "impossible" << std::endl;
+    std::cout << "char: " << "Impossible" << std::endl;
+    std::cout << "int: " << "Impossible" << std::endl;
     std::cout << "float: " << str << "f" << std::endl;
     std::cout << "double: " << str << std::endl;
 }
 
 void Converter::impossiblePrinter()
 {
-    std::cout << "char: " << "impossible" << std::endl;
-    std::cout << "int: " << "impossible" << std::endl;
-    std::cout << "float: " << "impossible" << std::endl;
-    std::cout << "double: " << "impossible" << std::endl;
+    std::cout << "char: " << "Impossible" << std::endl;
+    std::cout << "int: " << "Impossible" << std::endl;
+    std::cout << "float: " << "Impossible" << std::endl;
+    std::cout << "double: " << "Impossible" << std::endl;
 }
 
 void Converter::convert(std::string str)
@@ -51,6 +51,7 @@ void Converter::convert(std::string str)
     int i = 0;
     int f_c = 0;
     int d_c = 0;
+    int n_c = 0;
     if (cstr[1] == '\0' && isalpha(cstr[0]))
     {
         convertChar(cstr[0]);
@@ -62,34 +63,31 @@ void Converter::convert(std::string str)
             f_c++;
         else if (cstr[i] == '.')
             d_c++;
+        else if (cstr[i] == '-')
+            n_c++;
+        // else if ((cstr[i] != 'f' && cstr[i] != '.') && (cstr[i] < '0' || cstr[i] > '9'))
+        // {
+        //     impossiblePrinter();
+        //     return ;
+        // }
         i++;
     }
     i = 0;
-    if (f_c > 1 || d_c > 1)
+    if (f_c > 1 || d_c > 1 || n_c > 1)
     {
         impossiblePrinter();
+        return;
     }
     try
     {
         if ((isdigit(cstr[i]) || cstr[i]) && f_c == 0 && d_c == 0)
-            convertInt(std::stoi(str));
+            convertInt(std::stoi(str)); //icinde throw var.
         else if (f_c == 1 && d_c == 1)
             convertFloat(std::stof(str));
         else if (f_c == 0 && d_c == 1)
             convertDouble(std::stod(str));
-        else
+        else if (str.length() >= 11)
             throw (42);
-    }
-    catch(const std::out_of_range & e)
-    {
-        try
-        {
-            Converter::printFunc(-1,-1,std::stof(str),std::stof(str));
-        }
-        catch(const std::out_of_range & e)
-        {
-            std::cout << "Out of all range\n";
-        }
     }
     catch (...)
     {
@@ -97,13 +95,17 @@ void Converter::convert(std::string str)
     }
 }
 
+
 void Converter::printFunc(char a, int b, float c, double d)
 {
-    if ((b == 0 || b < 0 || b >= 127 || b <= 32) || (b >= INT_MAX || b <= INT_MIN))
+    if (b < 0)
+        std::cout << "char: " << "Impossible" << std::endl;
+    else if (a <= 32 || a >= 127 || (b >= INT_MAX || b <= INT_MIN) || (b <= 32 || b >= 127))
         std::cout << "char: " << "Non displayable" << std::endl;
     else
-        std::cout << "char: " << "'" <<static_cast<char>(a) << "'" << std::endl;
+        std::cout << "char: " << "'" << static_cast<char>(a) << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(b) << std::endl;
+
     int x = (int)c;
     if (c == (float)x)
     {
