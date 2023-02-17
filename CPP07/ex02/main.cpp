@@ -1,30 +1,57 @@
-#include <iostream>
+#include "Array.hpp"
 
-//Array sınıfı typename T veri türü icin bir dizi depolar.
-template <typename T, size_t size>
-class Array
+#define MAX_VAL 3
+int main(int, char**)
 {
-public:
-    T arr[size];
-    T &operator[](size_t index)
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    //for overload operator
+    for (int i = 0; i < MAX_VAL; i++)
     {
-        return (arr[index]);
+        const int value = rand();
+        std::cout << "Value degeri: " << value << std::endl;
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //std::cout << "-------------------" << std::endl;
+    //std::cout << numbers[0] << std::endl;
+    //std::cout << numbers[1] << std::endl;
+    //std::cout << numbers[2] << std::endl;
+    //SCOPE for equal operator
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
     }
 
-    size_t length()
-    {
-        return(size);
-    }
-};
-
-
-int main()
-{
-    Array<int, 5> myArray;
-
-    for (size_t i = 1; i <= myArray.length(); i++)
-        myArray[i] = i;
-    for (size_t i = 1; i <= myArray.length(); i++)
-        std::cout << myArray[i] << std::endl;
-    return (0);
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     if (mirror[i] != numbers[i])
+    //     {
+    //         std::cerr << "didn't save the same value!!" << std::endl;
+    //         return 1;
+    //     }
+    // }
+    // try
+    // {
+    //     numbers[-2] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // try
+    // {
+    //     numbers[MAX_VAL] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     numbers[i] = rand();
+    // }
+    delete [] mirror;
+    return 0;
 }
