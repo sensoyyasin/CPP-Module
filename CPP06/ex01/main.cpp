@@ -8,15 +8,16 @@ struct Data
 
 static uintptr_t serialize(Data *ptr)
 {
+    //It takes a pointer and converts it to the unsigned integer type uintptr_t.
     //ptr -> donusturulecek veri
     //uintptr_t -> donusturulecek verinin yeni turu
-    //reinterpret_cast genellikle güvenli olmayan veya bellekteki verilerin doğrudan yorumlanması gereken durumlarda kullanılır. 
-    //Bunun yerine static_cast, dynamic_cast, const_cast gibi daha güvenli dönüştürme yöntemleri kullanılması önerilir.
+    //reinterpret -> yeniden yorumlama tur degisimi.
     return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 static Data* deserialize(uintptr_t raw)
 {
+    //It takes an unsigned integer parameter and converts it to a pointer to Data.
     return(reinterpret_cast<Data *>(raw));
 }
 
@@ -25,7 +26,6 @@ int main()
     Data str;
 
     str.s1 = "Hello";
-    str.s2 = "World";
 
     uintptr_t serialized_ptr = serialize(&str);
 
