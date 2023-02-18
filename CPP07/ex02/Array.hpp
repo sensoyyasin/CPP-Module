@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:24:56 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/18 20:52:00 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/18 20:53:23 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ public:
     {
         //std::cout << "this->size: " << this->size << std::endl;
         //std::cout << " index: " << index << std::endl;
-        if (index > this->size || index < 0)
+        if (index > this->size)
             throw(Array::OutOfBound());
         return(arr[index]);
     }
