@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:24:56 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/18 09:24:57 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/18 20:52:00 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ template <typename T>
 class Array
 {
 public:
-    size_t  size;
-    T       *arr;
+    unsigned int  size;
+    T             *arr;
     
-    Array() : size(0)
+    Array()
     {
+        this->size = 0;
         arr = new T();
     }
 
-    Array(unsigned int n) : size(n)
+    Array(unsigned int n)
     {
+        this->size = n;
         arr = new T[n];
     }
 
@@ -60,7 +62,7 @@ public:
     T &operator[](size_t index)
     {
         //std::cout << "this->size: " << this->size << std::endl;
-        std::cout << " index: " << index << std::endl;
+        //std::cout << " index: " << index << std::endl;
         if (index > this->size || index < 0)
             throw(Array::OutOfBound());
         return(arr[index]);
