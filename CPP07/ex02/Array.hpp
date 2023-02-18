@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/18 09:24:56 by yasinsensoy       #+#    #+#             */
+/*   Updated: 2023/02/18 09:24:57 by yasinsensoy      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
@@ -10,50 +22,53 @@ public:
     size_t  size;
     T       *arr;
     
-    Array() {}
-
-    Array(unsigned int n)
+    Array() : size(0)
     {
-        this->size = n;
-        this->arr = new T[n];
+        arr = new T();
     }
-    ~Array() {}
+
+    Array(unsigned int n) : size(n)
+    {
+        arr = new T[n];
+    }
+
+    Array(const Array &copy) : size(copy.Size())
+    {
+        this->arr = new T[this->size];
+        for (size_t i = 0; i <= size; i++)
+        {
+            this->arr[i] = copy.arr[i];
+        }
+    }
+
+    Array &operator=(const Array& copy)
+    {
+        if (this != &copy)
+        {
+            delete this->arr;
+            this->arr = new T[copy.Size()];
+            this->size = copy.size;
+            for (size_t i = 0; i < this->size; i++)
+            {
+                this->arr[i] = copy.arr[i];
+            }
+        }
+        return (*this);
+    }
 
     //Operator overload.
     T &operator[](size_t index)
     {
-        std::cout << "INDEX DEGERİ: " << index << std::endl;
-        std::cout << this->arr[index - 1] << std::endl;
-        try
-        {
-            if (index >= this->size || index < 0)
-            {
-                throw(Array::OutOfBound());
-            }
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-        return (arr[index]);
-    }
-
-    //equal operator 
-    T &operator=(T& other)
-    {
-        if (this == &other)
-        {
-            for (int i = 0; i < Size(); i++)
-                other[i] = this->arr[i];
-            return (*this);
-        }
-        else
-            delete[] arr;
+        //std::cout << "this->size: " << this->size << std::endl;
+        std::cout << " index: " << index << std::endl;
+        if (index > this->size || index < 0)
+            throw(Array::OutOfBound());
+        return(arr[index]);
     }
     
     size_t  Size(void) const
     {
-        return (this->size);
+        return (size);
     }
 
     class OutOfBound : public std::exception
