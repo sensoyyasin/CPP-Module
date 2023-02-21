@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:26:08 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 16:20:48 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/21 16:30:07 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main()
     {
         Span span(5);
         
-        span.addNumber(1);
-        span.addNumber(10);
-        span.addNumber(42);
-        span.addNumber(21);
-        span.addNumber(55);
+        span.addNumber(6);
+        span.addNumber(3);
+        span.addNumber(17);
+        span.addNumber(9);
+        span.addNumber(11);
         std::cout << "minimum difference: " << span.shortestSpan() << std::endl;
         std::cout << "maximum difference: " << span.longestSpan() << std::endl;
         //span.addNumber(6);
