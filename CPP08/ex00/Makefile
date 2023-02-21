@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+         #
+#    By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/02/20 13:11:46 by ysensoy          ###   ########.fr        #
+#    Updated: 2023/02/21 10:14:32 by yasinsensoy      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = STL
+NAME = EasyFind
 CC = c++
 CLAFGS = -Wall -Wextra -Werror -std=c++98
 SRCS = $(wildcard *.cpp)
