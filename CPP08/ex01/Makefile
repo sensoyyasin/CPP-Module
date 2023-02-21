@@ -6,11 +6,11 @@
 #    By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/02/21 15:26:31 by yasinsensoy      ###   ########.fr        #
+#    Updated: 2023/02/21 15:26:16 by yasinsensoy      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = EasyFind
+NAME = Span
 CC = c++
 CLAFGS = -Wall -Wextra -Werror -std=c++98
 SRCS = $(wildcard *.cpp)
