@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 18:58:54 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 18:58:56 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/22 17:16:10 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-    MutantStack<T>(){};
-    ~MutantStack<T>(){};
-
+    MutantStack(){};
+    ~MutantStack(){};
+    MutantStack(const MutantStack &copy) : std::stack<T>(copy) {};
+    MutantStack &operator=(const MutantStack& copy)
+    {
+        this->c = copy->c;
+        return(*this);
+    }
     typedef typename std::stack<T>::container_type::iterator iterator;
 
     iterator    begin(){ return (this->c.begin());}

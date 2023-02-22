@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:26:28 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 22:13:52 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/22 11:47:38 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     int arr[] = {10,20,30};
-    std::list<int> v(arr, arr + 3);
+    std::vector<int> v(arr, arr + 3);
 
     std::cout << "1st elements of the array: "; easyFinder(v, 10);
     std::cout << "2nd elements of the array: "; easyFinder(v, 20);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:26:20 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 15:26:21 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/22 13:41:56 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
     ~Span();
 
     void addNumber(int number);
-    void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+    void addNumbers(int number);
     int shortestSpan();
     int longestSpan();
 

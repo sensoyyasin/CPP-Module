@@ -34,11 +34,17 @@ void Span::addNumber(int number)
     std::cout << "The element \033[1;92madded\033[0m to vector: " << number << std::endl;
 }
 
-void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void Span::addNumbers(int number)
 {
+    int x;
     if (this->vec.size() > this->size)
         throw(Span::OutOfRange());
-    this->vec.insert(this->vec.end(), begin, end);
+    srand(time(NULL));
+    for(int i = 0; i < number; i++)
+    {
+        x = rand() % 10;
+        this->addNumber(x);
+    }
 }
 
 int Span::shortestSpan()
@@ -49,14 +55,14 @@ int Span::shortestSpan()
     std::vector<int> temp = this->vec;
     std::sort(temp.begin(), temp.end());
 
-    int enkucuk = temp[1] - temp[0];
+    int min = temp[1] - temp[0];
     for (size_t i = 2; i < temp.size(); i++)
     {
-        int fark = temp[i] - temp[i - 1];
-        if (fark < enkucuk)
-            enkucuk = fark;
+        int diff = temp[i] - temp[i - 1];
+        if (diff < min)
+            min = diff;
     }
-    return(enkucuk);
+    return(min);
 }
 
 int Span::longestSpan()
@@ -64,7 +70,7 @@ int Span::longestSpan()
     if (this->vec.size() <= 1)
         throw(NumberRange());
     std::vector<int> temp = this->vec;
-    sort(temp.begin(), temp.end());
+    std::sort(temp.begin(), temp.end());
     return(temp.back() - temp.front());
 }
 

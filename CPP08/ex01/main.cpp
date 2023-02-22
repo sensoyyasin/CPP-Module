@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:26:08 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 22:14:12 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/22 17:20:40 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,20 @@ int main()
     try
     {
         Span span(5);
-        
         span.addNumber(6);
         span.addNumber(3);
         span.addNumber(17);
         span.addNumber(9);
-        span.addNumber(11);
+        span.addNumber(10);
+        //span.addNumbers(2);
+        //span.addNumber(11);
         std::cout << "minimum difference: " << span.shortestSpan() << std::endl;
         std::cout << "maximum difference: " << span.longestSpan() << std::endl;
-        //span.addNumber(6);
-        //span.addNumber(7);
     }
     catch(const std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-
     // try
     // {
     //     std::vector<int> v(10000);
