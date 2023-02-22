@@ -6,7 +6,7 @@
 /*   By: yasinsensoy <yasinsensoy@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:26:26 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/21 15:50:48 by yasinsensoy      ###   ########.fr       */
+/*   Updated: 2023/02/21 22:12:44 by yasinsensoy      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 #include <algorithm>
 #include <vector>
 #include <list>
+#include <map>
 
-template < typename T, typename U >
-int easyFinder(T &container, U y)
+template < typename T >
+int easyFinder(T &container, int y)
 {
-    std::vector<int>::iterator it;
+    std::list<int>::iterator it;
 
     it = std::find(container.begin(), container.end(), y);
     if (it != container.end())
