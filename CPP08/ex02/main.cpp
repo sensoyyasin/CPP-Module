@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 18:58:56 by yasinsensoy       #+#    #+#             */
-/*   Updated: 2023/02/22 17:15:09 by ysensoy          ###   ########.fr       */
+/*   Updated: 2023/02/22 17:21:17 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int main()
     std::cout << "----------------" << std::endl;
 
     std::stack<int> s(mstack);
-    MutantStack<int>::iterator it2 = s.c.begin();
-
     while(!s.empty())
     {
         std::cout << "Stack inside: " << s.top() << std::endl;
