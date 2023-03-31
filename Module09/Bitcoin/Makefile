@@ -5,29 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/26 12:28:00 by yasinsensoy       #+#    #+#              #
-#    Updated: 2023/03/31 16:47:33 by ysensoy          ###   ########.fr        #
+#    Created: 2023/02/06 02:13:43 by ysensoy           #+#    #+#              #
+#    Updated: 2023/03/31 16:26:35 by ysensoy          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = RPN
+NAME = btc
 CC = c++
-CLAFGS = -Wall -Wextra -Werror -std=c++98
-SRCS = $(wildcard *.cpp)
-OBJ = $(SRCS:.cpp = .o)
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-Wno-shadow #-Wshadow
+SRCS = *.cpp
+OBJS = $(SRCS:.cpp = .o)
 
-$(NAME): $(OBJ)
-	@$(CC) $(CLAFGS) $(SRCS) -o $(NAME)
-	@echo "\033[1;92mCompiled succesfully..\033[0m"
+$(NAME): $(OBJS)
+		@$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+		@echo "\033[1;32mCOMPILED SUCCESSFULLY\033[0m"
 
 all: $(NAME)
 
 clean:
-	rm -rf  $(NAME)
+		@echo "\033[1;32mCLEAN\033[0m"
+		@rm -rf $(NAME)
 
-fclean: clean
+fclean:
+		@echo "\033[1;32mFCLEAN\033[0m"
+		@make clean
 
+re:
+		@echo "\033[1;32mREMAKE\033[0m"
+		@make fclean
+		@make all
 
-re: fclean all
-
-.PHONY: all clean fclean re
+exe:
+		@echo "\033[1;32mSTART EXECUTING\033[0m"
+		@./$(NAME)
+		@echo "\033[1;32mDONE EXECUTING\033[0m"

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/31 15:31:32 by ysensoy           #+#    #+#             */
+/*   Updated: 2023/03/31 16:47:30 by ysensoy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <stack>
 #include <string>
@@ -12,6 +24,32 @@ int main(int argc, char **argv)
 
     std::stack<int> s;
     std::string line = argv[1];
+
+    int i = 1;
+    int j = 0;
+
+    int token_counter = 0;
+    char real_token;
+    while(argv[i])
+    {
+        j = 0;
+        while(argv[i][j])
+       {
+            if (argv[i][j] == '/' || argv[i][j] == '+' || argv[i][j] == '*' || argv[i][j] == '-')
+            {
+                token_counter++;
+                real_token = argv[i][j];
+            }
+            j++;
+       } 
+       i++;
+    }
+
+    if (token_counter == 0)
+    {
+        std::cerr << "There is no Operator" << std::endl;
+        exit(1);
+    }
 
     std::string::iterator it = line.begin();
     std::string num = "";
@@ -42,7 +80,7 @@ int main(int argc, char **argv)
 
             int second = s.top();
             s.pop();
-            if (first == 0)
+            if (first == 0 && real_token == '/')
             {
                 std::cerr << "Error: Divide by 0" << std::endl;
                 exit(1);
