@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:50:12 by ysensoy           #+#    #+#             */
-/*   Updated: 2023/03/31 16:44:52 by ysensoy          ###   ########.fr       */
+/*   Updated: 2023/03/31 17:18:20 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ BitcoinExchange::BitcoinExchange()
 		this->curr_day = atoi(strtok(NULL, "-,"));
 		rate = atof(strtok(NULL, "-,"));
 
-		curr_stamp = (this->curr_year << 16) + (this->curr_month << 8) + (this->curr_day);
-
+		curr_stamp = this->curr_year * 100 + this->curr_month * 10 + this->curr_day;
+		//curr_stamp = (this->curr_year << 16) + (this->curr_month << 8) + (this->curr_day); // unique value
 		this->map.insert(std::pair<int, float>(curr_stamp, rate));
 	}
 }
@@ -141,7 +141,8 @@ void BitcoinExchange::rateCalculator(char *filename)
 			std::cout << "Error: too large a number." << std::endl;
 			continue;
 		}
-		curr_stamp = (this->curr_year << 16) + (this->curr_month << 8) + (this->curr_day);
+		curr_stamp = this->curr_year * 100 + this->curr_month * 10 + this->curr_day;
+		//curr_stamp = (this->curr_year << 16) + (this->curr_month << 8) + (this->curr_day);
 		for (std::map<int, float>::iterator it = this->map.begin(); it != map.end(); it++)
 		{
 			if (it->first == curr_stamp)
