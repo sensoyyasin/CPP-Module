@@ -1,6 +1,5 @@
 #include "Zombie.hpp"
 
-//Default constructor
 Zombie::Zombie()
 {
 	this->Name = "Noname";
